@@ -1,0 +1,127 @@
+=====================================
+ EVIDENCIAS - EXAMEN FINAL UCB
+ Containerización y Orquestación
+=====================================
+
+Fecha: 23 de October, 2025
+Estudiante: [Tu Nombre]
+
+=== IMÁGENES DOCKER CONSTRUIDAS ===
+
+todo-backend                1.0.0          35668c03e80d   21 minutes ago   156MB
+todo-worker                 1.0.0          dd01387dbf89   21 minutes ago   151MB
+todo-frontend               1.0.0          a10867457bee   21 minutes ago   52.8MB
+todo-nginx                  1.0.0          f8553d6ca754   21 minutes ago   52.8MB
+
+=== CLUSTER K3D ===
+
+NAME           SERVERS   AGENTS   LOADBALANCER
+todo-cluster   1/1       3/3      true
+
+=== NODOS DEL CLUSTER ===
+
+NAME                        STATUS   ROLES                  AGE   VERSION        INTERNAL-IP   EXTERNAL-IP   OS-IMAGE           KERNEL-VERSION      CONTAINER-RUNTIME
+k3d-todo-cluster-agent-0    Ready    <none>                 18m   v1.31.5+k3s1   172.18.0.4    <none>        K3s v1.31.5+k3s1   6.14.0-33-generic   containerd://1.7.23-k3s2
+k3d-todo-cluster-agent-1    Ready    <none>                 18m   v1.31.5+k3s1   172.18.0.5    <none>        K3s v1.31.5+k3s1   6.14.0-33-generic   containerd://1.7.23-k3s2
+k3d-todo-cluster-agent-2    Ready    <none>                 18m   v1.31.5+k3s1   172.18.0.3    <none>        K3s v1.31.5+k3s1   6.14.0-33-generic   containerd://1.7.23-k3s2
+k3d-todo-cluster-server-0   Ready    control-plane,master   18m   v1.31.5+k3s1   172.18.0.2    <none>        K3s v1.31.5+k3s1   6.14.0-33-generic   containerd://1.7.23-k3s2
+
+=== PODS DESPLEGADOS ===
+
+NAME                             READY   STATUS             RESTARTS        AGE   IP          NODE                        NOMINATED NODE   READINESS GATES
+backend-565c89cfd8-bx25d         1/1     Running            0               14m   10.42.0.3   k3d-todo-cluster-agent-0    <none>           <none>
+backend-565c89cfd8-f22pv         1/1     Running            0               14m   10.42.1.4   k3d-todo-cluster-agent-2    <none>           <none>
+backend-565c89cfd8-n8qx2         1/1     Running            0               14m   10.42.2.3   k3d-todo-cluster-server-0   <none>           <none>
+frontend-67f4d4c5df-mcw9q        0/1     CrashLoopBackOff   8 (4m16s ago)   14m   10.42.0.4   k3d-todo-cluster-agent-0    <none>           <none>
+frontend-67f4d4c5df-xdtmc        0/1     Running            8 (5m26s ago)   14m   10.42.2.4   k3d-todo-cluster-server-0   <none>           <none>
+mongodb-0                        1/1     Running            0               14m   10.42.3.4   k3d-todo-cluster-agent-1    <none>           <none>
+nginx-ingress-5c44f58d4c-bmqsr   1/1     Running            1 (13m ago)     14m   10.42.0.5   k3d-todo-cluster-agent-0    <none>           <none>
+nginx-ingress-5c44f58d4c-c72hs   1/1     Running            1 (13m ago)     14m   10.42.2.5   k3d-todo-cluster-server-0   <none>           <none>
+redis-584b4db97f-sqm4s           1/1     Running            0               14m   10.42.1.6   k3d-todo-cluster-agent-2    <none>           <none>
+worker-75bdf5c947-njxp7          0/1     CrashLoopBackOff   7 (2m43s ago)   14m   10.42.1.5   k3d-todo-cluster-agent-2    <none>           <none>
+worker-75bdf5c947-pwwqr          0/1     CrashLoopBackOff   7 (2m39s ago)   14m   10.42.3.3   k3d-todo-cluster-agent-1    <none>           <none>
+
+=== SERVICIOS ===
+
+NAME                 TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+backend-nodeport     NodePort       10.43.31.243    <none>        5000:30500/TCP   14m
+backend-service      ClusterIP      10.43.191.71    <none>        5000/TCP         14m
+frontend-nodeport    NodePort       10.43.171.222   <none>        80:30300/TCP     14m
+frontend-service     ClusterIP      10.43.162.93    <none>        80/TCP           14m
+mongodb-service      ClusterIP      None            <none>        27017/TCP        14m
+nginx-loadbalancer   LoadBalancer   10.43.112.97    <pending>     80:31442/TCP     14m
+redis-service        ClusterIP      10.43.191.247   <none>        6379/TCP         14m
+
+=== DEPLOYMENTS ===
+
+NAME            READY   UP-TO-DATE   AVAILABLE   AGE
+backend         3/3     3            3           14m
+frontend        0/2     2            0           14m
+nginx-ingress   2/2     2            2           14m
+redis           1/1     1            1           14m
+worker          0/2     2            0           14m
+
+=== STATEFULSETS ===
+
+NAME      READY   AGE
+mongodb   1/1     14m
+
+=== PERSISTENT VOLUME CLAIMS ===
+
+NAME          STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+mongodb-pvc   Bound    pvc-1d039151-4df9-454c-89cf-f7da55230093   5Gi        RWO            local-path     <unset>                 14m
+redis-pvc     Bound    pvc-d33724f7-311e-4a60-b067-a1f48d8c69fd   1Gi        RWO            local-path     <unset>                 14m
+
+=== TODOS LOS RECURSOS ===
+
+NAME                                 READY   STATUS             RESTARTS        AGE
+pod/backend-565c89cfd8-bx25d         1/1     Running            0               14m
+pod/backend-565c89cfd8-f22pv         1/1     Running            0               14m
+pod/backend-565c89cfd8-n8qx2         1/1     Running            0               14m
+pod/frontend-67f4d4c5df-mcw9q        0/1     CrashLoopBackOff   8 (4m16s ago)   14m
+pod/frontend-67f4d4c5df-xdtmc        0/1     Running            8 (5m26s ago)   14m
+pod/mongodb-0                        1/1     Running            0               14m
+pod/nginx-ingress-5c44f58d4c-bmqsr   1/1     Running            1 (13m ago)     14m
+pod/nginx-ingress-5c44f58d4c-c72hs   1/1     Running            1 (13m ago)     14m
+pod/redis-584b4db97f-sqm4s           1/1     Running            0               14m
+pod/worker-75bdf5c947-njxp7          0/1     CrashLoopBackOff   7 (2m43s ago)   14m
+pod/worker-75bdf5c947-pwwqr          0/1     CrashLoopBackOff   7 (2m39s ago)   14m
+
+NAME                         TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+service/backend-nodeport     NodePort       10.43.31.243    <none>        5000:30500/TCP   14m
+service/backend-service      ClusterIP      10.43.191.71    <none>        5000/TCP         14m
+service/frontend-nodeport    NodePort       10.43.171.222   <none>        80:30300/TCP     14m
+service/frontend-service     ClusterIP      10.43.162.93    <none>        80/TCP           14m
+service/mongodb-service      ClusterIP      None            <none>        27017/TCP        14m
+service/nginx-loadbalancer   LoadBalancer   10.43.112.97    <pending>     80:31442/TCP     14m
+service/redis-service        ClusterIP      10.43.191.247   <none>        6379/TCP         14m
+
+NAME                            READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/backend         3/3     3            3           14m
+deployment.apps/frontend        0/2     2            0           14m
+deployment.apps/nginx-ingress   2/2     2            2           14m
+deployment.apps/redis           1/1     1            1           14m
+deployment.apps/worker          0/2     2            0           14m
+
+NAME                                       DESIRED   CURRENT   READY   AGE
+replicaset.apps/backend-565c89cfd8         3         3         3       14m
+replicaset.apps/frontend-67f4d4c5df        2         2         0       14m
+replicaset.apps/nginx-ingress-5c44f58d4c   2         2         2       14m
+replicaset.apps/redis-584b4db97f           1         1         1       14m
+replicaset.apps/worker-75bdf5c947          2         2         0       14m
+
+NAME                       READY   AGE
+statefulset.apps/mongodb   1/1     14m
+
+=== RESUMEN ===
+
+Cluster K3D creado: ✓
+Imágenes Docker construidas: ✓
+Imágenes importadas a K3D: ✓
+Manifiestos aplicados: ✓
+Servicios desplegados: 6
+Puerto de acceso: http://localhost:9080
+
+=====================================
+ REPORTE GENERADO EXITOSAMENTE
+=====================================
