@@ -1,0 +1,105 @@
+version: '3.8'
+
+# Redes para Swarm
+networks:
+  app-network:
+    driver: overlay
+    attachable: true
+
+# Volúmenes
+volumes:
+  mongodb-data:
+  redis-data:
+
+services:
+  # MongoDB
+  mongodb:
+    image: mongo:7-jammy
+    networks:
+      - app-network
+    volumes:
+      - mongodb-data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=todoapp
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    networks:
+      - app-network
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+  # Backend API con múltiples réplicas
+  backend:
+    image: todo-backend:1.0.0
+    networks:
+      - app-network
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+      - MONGODB_URI=mongodb://mongodb:27017/todoapp
+      - REDIS_URL=redis://redis:6379
+    deploy:
+      replicas: 3
+      labels:
+        - "com.example.version=1.0.0"
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+      update_config:
+        parallelism: 2
+        delay: 10s
+        failure_action: rollback
+
+  # Worker
+  worker:
+    image: todo-worker:1.0.0
+    networks:
+      - app-network
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://mongodb:27017/todoapp
+      - REDIS_URL=redis://redis:6379
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+
+  # Frontend
+  frontend:
+    image: todo-frontend:1.0.0
+    networks:
+      - app-network
+    environment:
+      - REACT_APP_API_URL=http://localhost/api
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+
+  # Nginx Load Balancer
+  nginx:
+    image: todo-nginx:1.0.0
+    networks:
+      - app-network
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+        mode: ingress
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
