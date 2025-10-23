@@ -46,37 +46,11 @@ spec:
         imagePullPolicy: IfNotPresent
         env:
         - name: MONGODB_URI
-          value: "mongodb://$(MONGODB_USER):$(MONGODB_PASS)@mongodb-service:27017/$(MONGODB_DB)?authSource=admin"
-        - name: MONGODB_USER
-          valueFrom:
-            secretKeyRef:
-              name: todo-secrets
-              key: mongodb-username
-        - name: MONGODB_PASS
-          valueFrom:
-            secretKeyRef:
-              name: todo-secrets
-              key: mongodb-password
-        - name: MONGODB_DB
-          valueFrom:
-            configMapKeyRef:
-              name: todo-config
-              key: MONGODB_DATABASE
-        - name: REDIS_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: todo-config
-              key: REDIS_HOST
-        - name: REDIS_PORT
-          valueFrom:
-            configMapKeyRef:
-              name: todo-config
-              key: REDIS_PORT
+          value: "mongodb://admin:securepassword123@mongodb-service:27017/tododb?authSource=admin"
+        - name: REDIS_URL
+          value: "redis://redis-service:6379"
         - name: NODE_ENV
-          valueFrom:
-            configMapKeyRef:
-              name: todo-config
-              key: NODE_ENV
+          value: "production"
         resources:
           requests:
             memory: "256Mi"
