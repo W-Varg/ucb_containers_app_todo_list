@@ -1,0 +1,16 @@
+{
+  "name": "todo-worker",
+  "version": "1.0.0",
+  "description": "Worker para procesamiento en background - Examen Final UCB",
+  "main": "worker.js",
+  "scripts": {
+    "start": "node worker.js"
+  },
+  "dependencies": {
+    "mongoose": "^8.0.0",
+    "redis": "^4.6.0",
+    "dotenv": "^16.3.1"
+  },
+  "author": "UCB Student",
+  "license": "MIT"
+}
