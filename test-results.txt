@@ -1,0 +1,175 @@
+=========================================
+  PRUEBAS DEL PROYECTO TODO APP - UCB
+=========================================
+
+📊 1. Estado de los contenedores:
+-----------------------------------
+time="2025-10-23T07:26:59-04:00" level=warning msg="/home/dev/Documents/developer_folder/ucb/final/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+NAME            IMAGE                 COMMAND                  SERVICE    CREATED         STATUS                     PORTS
+todo-backend    todo-backend:1.0.0    "docker-entrypoint.s…"   backend    4 minutes ago   Up 4 minutes (unhealthy)   0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp
+todo-frontend   todo-frontend:1.0.0   "/docker-entrypoint.…"   frontend   4 minutes ago   Up 4 minutes (unhealthy)   80/tcp, 0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+todo-mongodb    mongo:7-jammy         "docker-entrypoint.s…"   mongodb    4 minutes ago   Up 4 minutes (healthy)     0.0.0.0:27017->27017/tcp, [::]:27017->27017/tcp
+todo-nginx      todo-nginx:1.0.0      "/docker-entrypoint.…"   nginx      4 minutes ago   Up 4 minutes (unhealthy)   0.0.0.0:80->80/tcp, [::]:80->80/tcp
+todo-redis      redis:7-alpine        "docker-entrypoint.s…"   redis      4 minutes ago   Up 4 minutes (healthy)     0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp
+todo-worker     todo-worker:1.0.0     "docker-entrypoint.s…"   worker     4 minutes ago   Up 4 minutes (healthy)     
+
+🐳 2. Imágenes Docker creadas:
+-----------------------------------
+todo-nginx                       1.0.0                   a453eabfbdb0   11 minutes ago   52.8MB
+todo-frontend                    1.0.0                   9ff060e46ad2   11 minutes ago   52.8MB
+todo-backend                     1.0.0                   686527711257   14 minutes ago   156MB
+todo-worker                      1.0.0                   fc31701d419d   14 minutes ago   151MB
+
+🌐 3. Redes Docker:
+-----------------------------------
+86f7c395847f   final_backend-network    bridge    local
+4cc6e3f05391   final_frontend-network   bridge    local
+
+💾 4. Volúmenes persistentes:
+-----------------------------------
+local     final_mongodb-data
+local     final_nginx-logs
+local     final_redis-data
+
+🔍 5. Health Check del Backend:
+-----------------------------------
+{
+    "status": "OK",
+    "mongodb": "connected",
+    "redis": "connected",
+    "version": "1.0.0",
+    "timestamp": "2025-10-23T11:26:59.122Z"
+}
+
+📝 6. Listado de tareas (API directa):
+-----------------------------------
+[
+    {
+        "_id": "68fa10c3a0274ce26e3fe8d4",
+        "title": "Tarea de prueba desde terminal",
+        "description": "Verificando funcionamiento completo del sistema",
+        "completed": false,
+        "priority": "high",
+        "createdAt": "2025-10-23T11:25:55.891Z",
+        "updatedAt": "2025-10-23T11:25:55.891Z",
+        "__v": 0
+    },
+    {
+        "_id": "68fa0fe6d0ee7bac99ce5f47",
+        "title": "Bienvenido a la aplicaci\u00f3n ToDo",
+        "description": "Esta es una tarea de ejemplo creada durante la inicializaci\u00f3n",
+        "completed": false,
+        "priority": "high",
+        "createdAt": "2025-10-23T11:22:14.151Z",
+        "updatedAt": "2025-10-23T11:22:14.151Z"
+    },
+    {
+        "_id": "68fa0fe6d0ee7bac99ce5f48",
+        "title": "Completar examen final de Containerizaci\u00f3n",
+        "description": "Implementar Docker Compose, Swarm y Kubernetes",
+        "completed": false,
+        "priority": "high",
+        "createdAt": "2025-10-23T11:22:14.151Z",
+        "updatedAt": "2025-10-23T11:22:14.151Z"
+    },
+    {
+        "_id": "68fa0fe6d0ee7bac99ce5f49",
+        "title": "Documentar el proyecto",
+        "description": "Crear README con instrucciones y diagramas",
+        "completed": false,
+        "priority": "medium",
+        "createdAt": "2025-10-23T11:22:14.151Z",
+        "updatedAt": "2025-10-23T11:22:14.151Z"
+    },
+    {
+        "_id": "68fa0fe6d0ee7bac99ce5f4a",
+        "title": "Subir im\u00e1genes a Docker Hub",
+        "description": "Publicar todas las im\u00e1genes en un repositorio p\u00fablico",
+        "completed": false,
+        "priority": "medium",
+        "createdAt": "2025-10-23T11:22:14.151Z",
+        "updatedAt": "2025-10-23T11:22:14.151Z"
+    }
+]
+
+📈 7. Estadísticas de tareas:
+-----------------------------------
+{
+    "total": 5,
+    "completed": 0,
+    "pending": 5,
+    "completionRate": "0.00"
+}
+
+🔄 8. Health Check a través de Nginx:
+-----------------------------------
+{
+    "status": "OK",
+    "mongodb": "connected",
+    "redis": "connected",
+    "version": "1.0.0",
+    "timestamp": "2025-10-23T11:26:59.265Z"
+}
+
+🌐 9. API a través de Nginx:
+-----------------------------------
+{
+    "total": 5,
+    "completed": 0,
+    "pending": 5,
+    "completionRate": "0.00"
+}
+
+✅ 10. Crear una nueva tarea:
+-----------------------------------
+{
+    "title": "Tarea creada desde script de pruebas",
+    "description": "Verificaci\u00f3n autom\u00e1tica del sistema",
+    "completed": false,
+    "priority": "high",
+    "_id": "68fa1103a0274ce26e3fe8dd",
+    "createdAt": "2025-10-23T11:26:59.364Z",
+    "updatedAt": "2025-10-23T11:26:59.364Z",
+    "__v": 0
+}
+
+📊 11. Estadísticas actualizadas:
+-----------------------------------
+{
+    "total": 6,
+    "completed": 0,
+    "pending": 6,
+    "completionRate": "0.00"
+}
+
+🔍 12. Logs recientes del Backend:
+-----------------------------------
+time="2025-10-23T07:26:59-04:00" level=warning msg="/home/dev/Documents/developer_folder/ucb/final/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+todo-backend  | (Use `node --trace-warnings ...` to show where the warning was created)
+todo-backend  | (node:1) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+todo-backend  | 🚀 Servidor backend ejecutándose en puerto 5000
+todo-backend  | 📊 Environment: production
+todo-backend  | ✅ Redis conectado exitosamente
+todo-backend  | ✅ MongoDB conectado exitosamente
+todo-backend  | 💾 Tareas guardadas en cache Redis
+todo-backend  | ✅ Nueva tarea creada: new ObjectId('68fa10c3a0274ce26e3fe8d4')
+todo-backend  | 💾 Tareas guardadas en cache Redis
+todo-backend  | ✅ Nueva tarea creada: new ObjectId('68fa1103a0274ce26e3fe8dd')
+
+🔍 13. Logs recientes del Worker:
+-----------------------------------
+time="2025-10-23T07:26:59-04:00" level=warning msg="/home/dev/Documents/developer_folder/ucb/final/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 4, Completadas: 0, Pendientes: 4
+todo-worker  | 💓 Worker Health: MongoDB ✅ | Redis ✅
+todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 4, Completadas: 0, Pendientes: 4
+todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 4, Completadas: 0, Pendientes: 4
+todo-worker  | 💓 Worker Health: MongoDB ✅ | Redis ✅
+todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 4, Completadas: 0, Pendientes: 4
+todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 4, Completadas: 0, Pendientes: 4
+todo-worker  | 💓 Worker Health: MongoDB ✅ | Redis ✅
+todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 5, Completadas: 0, Pendientes: 5
+todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 5, Completadas: 0, Pendientes: 5
+
+=========================================
+  ✅ PRUEBAS COMPLETADAS EXITOSAMENTE
+=========================================

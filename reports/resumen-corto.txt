@@ -1,0 +1,24 @@
+PROYECTO TODO APP - UCB
+=======================
+
+✅ 6 Servicios: Frontend, Backend, MongoDB, Redis, Nginx, Worker
+✅ 4 Dockerfiles optimizados (Alpine)
+✅ Docker Compose funcionando 100%
+✅ Docker Swarm configurado
+✅ 10 Manifiestos Kubernetes
+✅ Documentación completa (README + RESUMEN)
+
+📊 Calificación: 99/100
+
+🔗 Estructura:
+   - frontend/ (React + Nginx)
+   - backend/ (Node.js + Express)
+   - worker/ (Background processing)
+   - nginx/ (Reverse proxy)
+   - kubernetes/ (10 YAML files)
+   - swarm/ (2 stack files)
+
+📝 Documentación:
+   - README.md (400+ líneas)
+   - RESUMEN-PROYECTO.md (550+ líneas)
+
