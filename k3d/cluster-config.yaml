@@ -1,0 +1,79 @@
+# K3D Cluster Configuration for ToDo Application
+# Este archivo define un cluster K3s multi-nodo usando K3D
+
+apiVersion: k3d.io/v1alpha5
+kind: Simple
+metadata:
+  name: todo-cluster
+
+# Servidores (control plane) - 1 master node
+servers: 1
+
+# Agentes (workers) - 3 worker nodes para alta disponibilidad
+agents: 3
+
+# Mapeo de puertos desde el host al cluster
+ports:
+  - port: 8080:80      # HTTP - LoadBalancer nginx
+    nodeFilters:
+      - loadbalancer
+  - port: 8443:443     # HTTPS (futuro)
+    nodeFilters:
+      - loadbalancer
+  - port: 5000:30500   # Backend API NodePort
+    nodeFilters:
+      - loadbalancer
+  - port: 3000:30300   # Frontend NodePort
+    nodeFilters:
+      - loadbalancer
+
+# Opciones del cluster
+options:
+  k3d:
+    wait: true
+    timeout: "120s"
+    disableLoadbalancer: false
+    
+  k3s:
+    extraArgs:
+      - arg: --disable=traefik  # Deshabilitamos Traefik, usaremos nuestro nginx
+        nodeFilters:
+          - server:*
+      - arg: --disable=servicelb  # Usaremos nuestro propio LoadBalancer
+        nodeFilters:
+          - server:*
+    nodeLabels:
+      - label: environment=development
+        nodeFilters:
+          - agent:*
+
+  kubeconfig:
+    updateDefaultKubeconfig: true
+    switchCurrentContext: true
+
+  runtime:
+    gpuRequest: ""
+    serversMemory: "2G"
+    agentsMemory: "2G"
+
+# Volúmenes para persistencia de datos
+volumes:
+  - volume: ./k3d-data/mongodb:/data/mongodb
+    nodeFilters:
+      - agent:0
+  - volume: ./k3d-data/redis:/data/redis
+    nodeFilters:
+      - agent:1
+
+# Registry para imágenes locales
+registries:
+  create:
+    name: todo-registry
+    host: "0.0.0.0"
+    hostPort: "5555"
+
+# Variables de entorno
+env:
+  - envVar: K3S_KUBECONFIG_MODE=644
+    nodeFilters:
+      - server:*

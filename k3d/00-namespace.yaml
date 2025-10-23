@@ -1,0 +1,10 @@
+---
+# Namespace para la aplicación ToDo en K3D
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: todo-app
+  labels:
+    name: todo-app
+    environment: k3d
+    managed-by: k3d-cluster

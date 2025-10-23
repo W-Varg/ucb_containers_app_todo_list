@@ -1,0 +1,102 @@
+---
+# Worker Deployment para K3D
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker
+  namespace: todo-app
+  labels:
+    app: worker
+    component: background
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: worker
+  template:
+    metadata:
+      labels:
+        app: worker
+        component: background
+    spec:
+      initContainers:
+      - name: wait-for-mongodb
+        image: busybox:1.36
+        command:
+        - sh
+        - -c
+        - |
+          until nc -z mongodb-service 27017; do
+            echo "Esperando MongoDB..."
+            sleep 2
+          done
+      - name: wait-for-redis
+        image: busybox:1.36
+        command:
+        - sh
+        - -c
+        - |
+          until nc -z redis-service 6379; do
+            echo "Esperando Redis..."
+            sleep 2
+          done
+      containers:
+      - name: worker
+        image: k3d-todo-registry.localhost:5555/todo-worker:1.0.0
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: MONGODB_URI
+          value: "mongodb://$(MONGODB_USER):$(MONGODB_PASS)@mongodb-service:27017/$(MONGODB_DB)?authSource=admin"
+        - name: MONGODB_USER
+          valueFrom:
+            secretKeyRef:
+              name: todo-secrets
+              key: mongodb-username
+        - name: MONGODB_PASS
+          valueFrom:
+            secretKeyRef:
+              name: todo-secrets
+              key: mongodb-password
+        - name: MONGODB_DB
+          valueFrom:
+            configMapKeyRef:
+              name: todo-config
+              key: MONGODB_DATABASE
+        - name: REDIS_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: todo-config
+              key: REDIS_HOST
+        - name: REDIS_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: todo-config
+              key: REDIS_PORT
+        - name: NODE_ENV
+          valueFrom:
+            configMapKeyRef:
+              name: todo-config
+              key: NODE_ENV
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "150m"
+          limits:
+            memory: "512Mi"
+            cpu: "300m"
+        livenessProbe:
+          exec:
+            command:
+            - pgrep
+            - -f
+            - node
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          exec:
+            command:
+            - pgrep
+            - -f
+            - node
+          initialDelaySeconds: 10
+          periodSeconds: 5

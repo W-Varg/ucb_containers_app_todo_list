@@ -1,0 +1,29 @@
+---
+# PersistentVolumeClaim para MongoDB
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongodb-pvc
+  namespace: todo-app
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path  # K3D usa local-path por defecto
+  resources:
+    requests:
+      storage: 5Gi
+
+---
+# PersistentVolumeClaim para Redis
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: redis-pvc
+  namespace: todo-app
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 1Gi
