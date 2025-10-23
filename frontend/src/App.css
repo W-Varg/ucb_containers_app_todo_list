@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-header {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.App-header h1 {
+  color: #667eea;
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex: 1;
+}
+
+.error-message {
+  background: #ff4444;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  animation: slideDown 0.3s ease;
+}
+
+.add-task-form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.task-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.add-button {
+  padding: 0.75rem 1.5rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+.add-button:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+}
+
+.add-button:active {
+  transform: translateY(0);
+}
+
+.add-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.tasks-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-height: 300px;
+}
+
+.tasks-container h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #667eea;
+}
+
+.loading, .no-tasks {
+  text-align: center;
+  color: #999;
+  padding: 2rem;
+  font-size: 1.1rem;
+}
+
+.tasks-list {
+  list-style: none;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid #f0f0f0;
+  border-radius: 8px;
+  transition: all 0.3s;
+  animation: fadeIn 0.3s ease;
+}
+
+.task-item:hover {
+  border-color: #667eea;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+}
+
+.task-item.completed {
+  opacity: 0.6;
+  background: #f9f9f9;
+}
+
+.task-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex: 1;
+}
+
+.task-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-top: 0.25rem;
+}
+
+.task-details {
+  flex: 1;
+}
+
+.task-details h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.task-item.completed .task-details h3 {
+  text-decoration: line-through;
+}
+
+.task-details p {
+  color: #666;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.task-details small {
+  color: #999;
+  font-size: 0.8rem;
+}
+
+.delete-button {
+  background: #ff4444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.3s, transform 0.1s;
+}
+
+.delete-button:hover {
+  background: #cc0000;
+  transform: scale(1.1);
+}
+
+.delete-button:active {
+  transform: scale(0.95);
+}
+
+.app-footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .add-task-form {
+    flex-direction: column;
+  }
+  
+  .container {
+    padding: 0 0.5rem;
+  }
+}
