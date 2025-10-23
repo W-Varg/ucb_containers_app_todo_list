@@ -14,16 +14,16 @@ agents: 3
 
 # Mapeo de puertos desde el host al cluster
 ports:
-  - port: 8080:80      # HTTP - LoadBalancer nginx
+  - port: 9080:80      # HTTP - LoadBalancer nginx (changed to 9080)
     nodeFilters:
       - loadbalancer
-  - port: 8443:443     # HTTPS (futuro)
+  - port: 9443:443     # HTTPS (futuro)
     nodeFilters:
       - loadbalancer
-  - port: 5000:30500   # Backend API NodePort
+  - port: 9500:30500   # Backend API NodePort (changed to 9500)
     nodeFilters:
       - loadbalancer
-  - port: 3000:30300   # Frontend NodePort
+  - port: 9300:30300   # Frontend NodePort (changed to 9300)
     nodeFilters:
       - loadbalancer
 
