@@ -45,7 +45,7 @@ spec:
           done
       containers:
       - name: backend
-        image: k3d-todo-registry.localhost:5555/todo-backend:1.0.0
+        image: todo-backend:1.0.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000

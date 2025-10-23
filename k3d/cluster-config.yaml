@@ -56,14 +56,14 @@ options:
     serversMemory: "2G"
     agentsMemory: "2G"
 
-# Volúmenes para persistencia de datos
-volumes:
-  - volume: ./k3d-data/mongodb:/data/mongodb
-    nodeFilters:
-      - agent:0
-  - volume: ./k3d-data/redis:/data/redis
-    nodeFilters:
-      - agent:1
+# Volúmenes para persistencia de datos (comentados - se usarán PVCs en su lugar)
+# volumes:
+#   - volume: /tmp/k3d-mongodb:/data/mongodb
+#     nodeFilters:
+#       - agent:0
+#   - volume: /tmp/k3d-redis:/data/redis
+#     nodeFilters:
+#       - agent:1
 
 # Registry para imágenes locales
 registries:

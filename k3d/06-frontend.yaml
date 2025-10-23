@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: k3d-todo-registry.localhost:5555/todo-frontend:1.0.0
+        image: todo-frontend:1.0.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80

@@ -42,7 +42,7 @@ spec:
           done
       containers:
       - name: worker
-        image: k3d-todo-registry.localhost:5555/todo-worker:1.0.0
+        image: todo-worker:1.0.0
         imagePullPolicy: IfNotPresent
         env:
         - name: MONGODB_URI

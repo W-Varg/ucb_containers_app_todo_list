@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: k3d-todo-registry.localhost:5555/todo-nginx:1.0.0
+        image: todo-nginx:1.0.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
