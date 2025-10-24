@@ -38,6 +38,8 @@ let redisClient;
   }
 })();
 
+// docs: una modificacion para subir de version el container
+
 // Modelo de Tarea
 const TaskSchema = new mongoose.Schema({
   title: {
