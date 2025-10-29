@@ -3,9 +3,8 @@
 ============================================
 
 📦 PROYECTO: Sistema de Gestión de Tareas (ToDo App)
-👨‍🎓 ESTUDIANTE: [COMPLETA CON TU NOMBRE]
+👨‍🎓 ESTUDIANTE: Wilver Vargas
 🏫 CURSO: Containerización y Orquestación de Contenedores
-📅 FECHA: 23 de Octubre, 2025
 
 ============================================
  ✅ TODO LISTO PARA EVALUACIÓN
