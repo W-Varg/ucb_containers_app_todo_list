@@ -120,7 +120,7 @@ local     final_redis-data
     "completionRate": "0.00"
 }
 
-✅ 10. Crear una nueva tarea:
+10. Crear una nueva tarea:
 -----------------------------------
 {
     "title": "Tarea creada desde script de pruebas",
@@ -149,27 +149,27 @@ todo-backend  | (Use `node --trace-warnings ...` to show where the warning was c
 todo-backend  | (node:1) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
 todo-backend  | 🚀 Servidor backend ejecutándose en puerto 5000
 todo-backend  | 📊 Environment: production
-todo-backend  | ✅ Redis conectado exitosamente
-todo-backend  | ✅ MongoDB conectado exitosamente
+todo-backend  | Redis conectado exitosamente
+todo-backend  | MongoDB conectado exitosamente
 todo-backend  | 💾 Tareas guardadas en cache Redis
-todo-backend  | ✅ Nueva tarea creada: new ObjectId('68fa10c3a0274ce26e3fe8d4')
+todo-backend  | Nueva tarea creada: new ObjectId('68fa10c3a0274ce26e3fe8d4')
 todo-backend  | 💾 Tareas guardadas en cache Redis
-todo-backend  | ✅ Nueva tarea creada: new ObjectId('68fa1103a0274ce26e3fe8dd')
+todo-backend  | Nueva tarea creada: new ObjectId('68fa1103a0274ce26e3fe8dd')
 
 🔍 13. Logs recientes del Worker:
 -----------------------------------
 time="2025-10-23T07:26:59-04:00" level=warning msg="/home/dev/Documents/developer_folder/ucb/final/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
 todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 4, Completadas: 0, Pendientes: 4
-todo-worker  | 💓 Worker Health: MongoDB ✅ | Redis ✅
+todo-worker  | 💓 Worker Health: MongoDB | Redis ✅
 todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 4, Completadas: 0, Pendientes: 4
 todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 4, Completadas: 0, Pendientes: 4
-todo-worker  | 💓 Worker Health: MongoDB ✅ | Redis ✅
+todo-worker  | 💓 Worker Health: MongoDB | Redis ✅
 todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 4, Completadas: 0, Pendientes: 4
 todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 4, Completadas: 0, Pendientes: 4
-todo-worker  | 💓 Worker Health: MongoDB ✅ | Redis ✅
+todo-worker  | 💓 Worker Health: MongoDB | Redis ✅
 todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 5, Completadas: 0, Pendientes: 5
 todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 5, Completadas: 0, Pendientes: 5
 
 =========================================
-  ✅ PRUEBAS COMPLETADAS EXITOSAMENTE
+  PRUEBAS COMPLETADAS EXITOSAMENTE
 =========================================

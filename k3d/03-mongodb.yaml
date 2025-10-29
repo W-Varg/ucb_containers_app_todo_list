@@ -27,21 +27,11 @@ spec:
         - containerPort: 27017
           name: mongo
         env:
-        - name: MONGO_INITDB_ROOT_USERNAME
-          valueFrom:
-            secretKeyRef:
-              name: todo-secrets
-              key: mongodb-username
-        - name: MONGO_INITDB_ROOT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: todo-secrets
-              key: mongodb-root-password
         - name: MONGO_INITDB_DATABASE
-          valueFrom:
-            configMapKeyRef:
-              name: todo-config
-              key: MONGODB_DATABASE
+          value: "tododb"
+        command:
+        - mongod
+        - --bind_ip_all
         volumeMounts:
         - name: mongodb-storage
           mountPath: /data/db

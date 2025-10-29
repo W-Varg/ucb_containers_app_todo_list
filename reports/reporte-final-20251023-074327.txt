@@ -33,25 +33,25 @@ todo-worker                      1.0.0                   fc31701d419d   31 minut
 
 📦 ARCHIVOS DOCKERFILES
 ==============================================
-✅ frontend/Dockerfile
+frontend/Dockerfile
 38 frontend/Dockerfile
-✅ backend/Dockerfile
+backend/Dockerfile
 41 backend/Dockerfile
-✅ worker/Dockerfile
+worker/Dockerfile
 37 worker/Dockerfile
-✅ nginx/Dockerfile
+nginx/Dockerfile
 26 nginx/Dockerfile
 
 📝 ARCHIVOS DOCKER COMPOSE
 ==============================================
-✅ docker-compose.yml
+docker-compose.yml
 194 docker-compose.yml
 
 🐝 ARCHIVOS DOCKER SWARM
 ==============================================
-✅ swarm/stack-deploy.yml
+swarm/stack-deploy.yml
 247 swarm/stack-deploy.yml
-✅ swarm/stack-simple.yml
+swarm/stack-simple.yml
 105 swarm/stack-simple.yml
 
 ☸️  ARCHIVOS KUBERNETES
@@ -72,9 +72,9 @@ Total de manifiestos K8s:
 
 📚 DOCUMENTACIÓN CREADA
 ==============================================
-✅ README.md
+README.md
 711 README.md
-✅ RESUMEN-PROYECTO.md
+RESUMEN-PROYECTO.md
 580 RESUMEN-PROYECTO.md
 
 🔍 ESTADO DE DOCKER SWARM
@@ -85,31 +85,31 @@ np0ziz76zur9eghzm184rj3zf *   hp-ubuntu   Ready     Active         Leader       
 NAME      SERVICES
 todoapp   6
 
-✅ VERIFICACIÓN DE ARCHIVOS CRÍTICOS
+VERIFICACIÓN DE ARCHIVOS CRÍTICOS
 ==============================================
-✅ frontend/Dockerfile
-✅ frontend/.dockerignore
-✅ backend/Dockerfile
-✅ backend/.dockerignore
-✅ worker/Dockerfile
-✅ worker/.dockerignore
-✅ nginx/Dockerfile
-✅ nginx/nginx.conf
-✅ docker-compose.yml
-✅ swarm/stack-deploy.yml
-✅ swarm/stack-simple.yml
-✅ kubernetes/00-namespace.yaml
-✅ kubernetes/01-secrets-configmap.yaml
-✅ kubernetes/02-persistent-volumes.yaml
-✅ kubernetes/03-mongodb-deployment.yaml
-✅ kubernetes/04-redis-deployment.yaml
-✅ kubernetes/05-backend-deployment.yaml
-✅ kubernetes/06-worker-deployment.yaml
-✅ kubernetes/07-frontend-deployment.yaml
-✅ kubernetes/08-nginx-loadbalancer.yaml
-✅ kubernetes/09-version-2-deployments.yaml
-✅ README.md
-✅ RESUMEN-PROYECTO.md
+frontend/Dockerfile
+frontend/.dockerignore
+backend/Dockerfile
+backend/.dockerignore
+worker/Dockerfile
+worker/.dockerignore
+nginx/Dockerfile
+nginx/nginx.conf
+docker-compose.yml
+swarm/stack-deploy.yml
+swarm/stack-simple.yml
+kubernetes/00-namespace.yaml
+kubernetes/01-secrets-configmap.yaml
+kubernetes/02-persistent-volumes.yaml
+kubernetes/03-mongodb-deployment.yaml
+kubernetes/04-redis-deployment.yaml
+kubernetes/05-backend-deployment.yaml
+kubernetes/06-worker-deployment.yaml
+kubernetes/07-frontend-deployment.yaml
+kubernetes/08-nginx-loadbalancer.yaml
+kubernetes/09-version-2-deployments.yaml
+README.md
+RESUMEN-PROYECTO.md
 
 📊 RESUMEN DE ARCHIVOS
 ==============================================
@@ -119,17 +119,17 @@ Archivos YAML K8s: 10
 Archivos de configuración: 1
 Archivos de documentación: 2
 
-🎯 CUMPLIMIENTO DE REQUISITOS
+CUMPLIMIENTO DE REQUISITOS
 ==============================================
-✅ Mínimo 5-7 servicios: 6 servicios implementados
-✅ Dockerfiles optimizados: 4 servicios custom
-✅ Imágenes Alpine: Frontend, Backend, Worker, Nginx
-✅ .dockerignore: Configurados en todos los servicios
-✅ docker-compose.yml: Completo con redes y volúmenes
-✅ stack-deploy.yml: Con réplicas y configs
-✅ Manifiestos K8s: 10 archivos YAML
-✅ Versionamiento: Tags y versiones implementados
-✅ Documentación: README.md + RESUMEN-PROYECTO.md
+Mínimo 5-7 servicios: 6 servicios implementados
+Dockerfiles optimizados: 4 servicios custom
+Imágenes Alpine: Frontend, Backend, Worker, Nginx
+.dockerignore: Configurados en todos los servicios
+docker-compose.yml: Completo con redes y volúmenes
+stack-deploy.yml: Con réplicas y configs
+Manifiestos K8s: 10 archivos YAML
+Versionamiento: Tags y versiones implementados
+Documentación: README.md + RESUMEN-PROYECTO.md
 
 🏆 CALIFICACIÓN ESTIMADA
 ==============================================
@@ -143,5 +143,5 @@ Documentación (25%):    25/25 ✅
 TOTAL:                  99/100 ⭐
 
 ==============================================
-✅ REPORTE GENERADO EXITOSAMENTE
+REPORTE GENERADO EXITOSAMENTE
 ==============================================

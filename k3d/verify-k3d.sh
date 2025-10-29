@@ -75,7 +75,7 @@ echo "-----------------------------------"
 kubectl get events -n todo-app --sort-by='.lastTimestamp' | tail -10
 echo ""
 
-echo -e "${BLUE}🎯 13. Endpoints:${NC}"
+echo -e "${BLUE}13. Endpoints:${NC}"
 echo "-----------------------------------"
 kubectl get endpoints -n todo-app
 echo ""
@@ -118,7 +118,7 @@ curl -s -o /dev/null -w "Status: %{http_code}\n" http://localhost:9080/ || echo 
 echo ""
 
 echo "========================================="
-echo "  ✅ VERIFICACIÓN COMPLETADA"
+echo "  VERIFICACIÓN COMPLETADA"
 echo "========================================="
 echo ""
 echo "Para ver logs de un pod específico:"

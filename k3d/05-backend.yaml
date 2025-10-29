@@ -54,7 +54,7 @@ spec:
         - name: PORT
           value: "5000"
         - name: MONGODB_URI
-          value: "mongodb://admin:securepassword123@mongodb-service:27017/tododb?authSource=admin"
+          value: "mongodb://mongodb-service:27017/tododb"
         - name: REDIS_URL
           value: "redis://redis-service:6379"
         - name: NODE_ENV

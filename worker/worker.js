@@ -28,13 +28,13 @@ async function startWorker() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log('✅ Worker: MongoDB conectado');
+    console.log('Worker: MongoDB conectado');
 
     // Conectar a Redis
     redisClient = redis.createClient({ url: REDIS_URL });
     redisClient.on('error', (err) => console.error('❌ Worker Redis Error:', err));
     await redisClient.connect();
-    console.log('✅ Worker: Redis conectado');
+    console.log('Worker: Redis conectado');
 
     // Iniciar procesamiento periódico
     console.log('🔄 Worker iniciado - Procesando tareas...');

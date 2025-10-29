@@ -14,7 +14,7 @@ data:
     }
 
     upstream frontend_app {
-        server frontend-service.todo-app.svc.cluster.local:80;
+        server frontend-service.todo-app.svc.cluster.local:3000;
     }
 
     # Servidor principal

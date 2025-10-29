@@ -22,7 +22,7 @@ mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-  .then(() => console.log('✅ MongoDB conectado exitosamente'))
+  .then(() => console.log('MongoDB conectado exitosamente'))
   .catch((err) => console.error('❌ Error conectando a MongoDB:', err));
 
 // Conexión a Redis
@@ -32,7 +32,7 @@ let redisClient;
     redisClient = redis.createClient({ url: REDIS_URL });
     redisClient.on('error', (err) => console.error('❌ Redis Error:', err));
     await redisClient.connect();
-    console.log('✅ Redis conectado exitosamente');
+    console.log('Redis conectado exitosamente');
   } catch (err) {
     console.error('❌ Error conectando a Redis:', err);
   }
@@ -149,7 +149,7 @@ app.post('/api/tasks', async (req, res) => {
       await redisClient.del('tasks');
     }
 
-    console.log('✅ Nueva tarea creada:', task._id);
+    console.log('Nueva tarea creada:', task._id);
     res.status(201).json(task);
   } catch (err) {
     console.error('Error creando tarea:', err);
@@ -183,7 +183,7 @@ app.put('/api/tasks/:id', async (req, res) => {
       await redisClient.del('tasks');
     }
 
-    console.log('✅ Tarea actualizada:', task._id);
+    console.log('Tarea actualizada:', task._id);
     res.json(task);
   } catch (err) {
     console.error('Error actualizando tarea:', err);

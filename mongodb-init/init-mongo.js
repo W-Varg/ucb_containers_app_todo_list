@@ -6,12 +6,12 @@ print('🚀 Iniciando script de inicialización de MongoDB...');
 // Cambiar a la base de datos todoapp
 db = db.getSiblingDB('todoapp');
 
-print('✅ Base de datos "todoapp" seleccionada');
+print('Base de datos "todoapp" seleccionada');
 
 // Crear colección de tareas si no existe
 db.createCollection('tasks');
 
-print('✅ Colección "tasks" creada');
+print('Colección "tasks" creada');
 
 // Insertar datos de ejemplo
 const tasksData = [
@@ -51,17 +51,17 @@ const tasksData = [
 
 db.tasks.insertMany(tasksData);
 
-print('✅ ' + tasksData.length + ' tareas de ejemplo insertadas');
+print('' + tasksData.length + ' tareas de ejemplo insertadas');
 
 // Crear índices para mejorar el rendimiento
 db.tasks.createIndex({ createdAt: -1 });
 db.tasks.createIndex({ completed: 1 });
 db.tasks.createIndex({ priority: 1 });
 
-print('✅ Índices creados exitosamente');
+print('Índices creados exitosamente');
 
 // Mostrar estadísticas
 const count = db.tasks.countDocuments();
 print('📊 Total de tareas en la base de datos: ' + count);
 
-print('✅ Inicialización de MongoDB completada exitosamente!');
+print('Inicialización de MongoDB completada exitosamente!');

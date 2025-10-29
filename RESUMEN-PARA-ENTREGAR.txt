@@ -7,7 +7,7 @@
 🏫 CURSO: Containerización y Orquestación de Contenedores
 
 ============================================
- ✅ TODO LISTO PARA EVALUACIÓN
+ TODO LISTO PARA EVALUACIÓN
 ============================================
 
 🔗 REPOSITORIO GITHUB
@@ -59,14 +59,14 @@ cd ucb_containers_app_todo_list
 ```
 
 ============================================
- ✅ CRITERIOS CUMPLIDOS
+ CRITERIOS CUMPLIDOS
 ============================================
 
-✅ Arquitectura (10%): 6 servicios diferenciados
-✅ Containerización (25%): 4 Dockerfiles optimizados
-✅ Docker Compose (20%): Funcional con réplicas
-✅ Kubernetes (20%): Cluster K3D con 11 pods
-✅ Documentación (25%): 69K de documentación
+Arquitectura (10%): 6 servicios diferenciados
+Containerización (25%): 4 Dockerfiles optimizados
+Docker Compose (20%): Funcional con réplicas
+Kubernetes (20%): Cluster K3D con 11 pods
+Documentación (25%): 69K de documentación
 
 TOTAL: 100% ✅
 
@@ -75,24 +75,24 @@ TOTAL: 100% ✅
 ============================================
 
 IMÁGENES DOCKER:
-  ✅ todo-backend:1.0.0 (156MB)
-  ✅ todo-frontend:1.0.0 (52.8MB)
-  ✅ todo-worker:1.0.0 (151MB)
-  ✅ todo-nginx:1.0.0 (52.8MB)
+  todo-backend:1.0.0 (156MB)
+  todo-frontend:1.0.0 (52.8MB)
+  todo-worker:1.0.0 (151MB)
+  todo-nginx:1.0.0 (52.8MB)
 
 CLUSTER K3D:
-  ✅ 4 nodos (1 master + 3 workers)
-  ✅ 11 pods desplegados
-  ✅ 7 servicios configurados
-  ✅ 2 volúmenes persistentes
+  4 nodos (1 master + 3 workers)
+  11 pods desplegados
+  7 servicios configurados
+  2 volúmenes persistentes
 
 MANIFIESTOS KUBERNETES:
-  ✅ 11 archivos YAML
-  ✅ Namespace personalizado
-  ✅ ConfigMaps y Secrets
-  ✅ Deployments con réplicas
-  ✅ StatefulSet para MongoDB
-  ✅ LoadBalancer configurado
+  11 archivos YAML
+  Namespace personalizado
+  ConfigMaps y Secrets
+  Deployments con réplicas
+  StatefulSet para MongoDB
+  LoadBalancer configurado
 
 ============================================
  🌐 ACCESO A LA APLICACIÓN
@@ -137,10 +137,10 @@ Total: 30 minutos
  💡 NOTAS IMPORTANTES
 ============================================
 
-✅ Todo está automatizado con scripts
-✅ No requiere conocimientos previos
-✅ Documentación paso a paso completa
-✅ Solución de problemas incluida
-✅ Evidencias generadas automáticamente
+Todo está automatizado con scripts
+No requiere conocimientos previos
+Documentación paso a paso completa
+Solución de problemas incluida
+Evidencias generadas automáticamente
 
 ============================================

@@ -16,14 +16,14 @@
 
 ---
 
-## 🎯 ¿Qué es K3D?
+## ¿Qué es K3D?
 
 **K3D** es una herramienta que ejecuta **K3s** (Kubernetes ligero de Rancher) en contenedores Docker. Es ideal para:
 
-- ✅ **Desarrollo local** de aplicaciones Kubernetes
-- ✅ **Testing** de configuraciones antes de producción
-- ✅ **CI/CD** pipelines
-- ✅ **Aprendizaje** de Kubernetes sin infraestructura compleja
+- **Desarrollo local** de aplicaciones Kubernetes
+- **Testing** de configuraciones antes de producción
+- **CI/CD** pipelines
+- **Aprendizaje** de Kubernetes sin infraestructura compleja
 
 ### Ventajas sobre otros entornos:
 
@@ -31,9 +31,9 @@
 |----------------|-----|----------|------|
 | Velocidad de inicio | ⚡ Muy rápido | 🐌 Lento | ⚡ Rápido |
 | Uso de recursos | 💚 Bajo | 💛 Medio | 💚 Bajo |
-| Multi-nodo | ✅ Sí | ✅ Sí | ✅ Sí |
-| Registry local | ✅ Built-in | ❌ Manual | ❌ Manual |
-| LoadBalancer | ✅ Automático | ⚠️ Requiere tunnel | ❌ Manual |
+| Multi-nodo | Sí | Sí | Sí |
+| Registry local | Built-in | ❌ Manual | ❌ Manual |
+| LoadBalancer | Automático | ⚠️ Requiere tunnel | ❌ Manual |
 
 ---
 
@@ -171,7 +171,7 @@ volumes:
 
 ---
 
-## 🎯 Despliegue
+## Despliegue
 
 ### 1. Preparar imágenes Docker
 
@@ -195,13 +195,13 @@ chmod +x deploy-k3d.sh
 ```
 
 El script automáticamente:
-- ✅ Instala K3D si no está presente
-- ✅ Crea el cluster con 1 master + 3 workers
-- ✅ Configura registry local
-- ✅ Tagea y sube imágenes al registry
-- ✅ Aplica todos los manifiestos Kubernetes
-- ✅ Espera a que todos los pods estén listos
-- ✅ Muestra información de acceso
+- Instala K3D si no está presente
+- Crea el cluster con 1 master + 3 workers
+- Configura registry local
+- Tagea y sube imágenes al registry
+- Aplica todos los manifiestos Kubernetes
+- Espera a que todos los pods estén listos
+- Muestra información de acceso
 
 ### 3. Verificar despliegue
 
@@ -468,10 +468,10 @@ docker rmi k3d-todo-registry.localhost:5555/todo-nginx:1.0.0
 
 K3D proporciona un entorno Kubernetes completo y ligero ideal para:
 
-- ✅ Desarrollo y testing local
-- ✅ Aprendizaje de Kubernetes
-- ✅ CI/CD pipelines
-- ✅ Demos y presentaciones
+- Desarrollo y testing local
+- Aprendizaje de Kubernetes
+- CI/CD pipelines
+- Demos y presentaciones
 
 **Ventajas de esta configuración:**
 - 🚀 Despliegue rápido (< 5 minutos)
