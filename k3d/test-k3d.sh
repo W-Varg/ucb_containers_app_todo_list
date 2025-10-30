@@ -130,7 +130,7 @@ kubectl top nodes --context k3d-todo-cluster 2>/dev/null || echo -e "${YELLOW}�
 
 echo ""
 echo "=========================================="
-echo "  📊 RESUMEN DE PRUEBAS"
+echo "  RESUMEN DE PRUEBAS"
 echo "=========================================="
 echo ""
 echo "Cluster:    ✓ Activo"

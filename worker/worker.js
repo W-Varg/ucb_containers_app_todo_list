@@ -37,7 +37,7 @@ async function startWorker() {
     console.log('Worker: Redis conectado');
 
     // Iniciar procesamiento periódico
-    console.log('🔄 Worker iniciado - Procesando tareas...');
+    console.log('Worker iniciado - Procesando tareas...');
     
     // Procesar tareas cada 30 segundos
     setInterval(async () => {
@@ -110,7 +110,7 @@ async function updateStatistics() {
     // Guardar en Redis
     if (redisClient?.isOpen) {
       await redisClient.setEx('stats', 300, JSON.stringify(stats));
-      console.log(`📊 Worker: Estadísticas actualizadas - Total: ${total}, Completadas: ${completed}, Pendientes: ${pending}`);
+      console.log(`Worker: Estadísticas actualizadas - Total: ${total}, Completadas: ${completed}, Pendientes: ${pending}`);
     }
   } catch (err) {
     console.error('❌ Error actualizando estadísticas:', err);

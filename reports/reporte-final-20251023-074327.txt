@@ -24,7 +24,7 @@
 ./.git/info
 ./.git/refs
 
-🐳 IMÁGENES DOCKER CREADAS
+ IMÁGENES DOCKER CREADAS
 ==============================================
 todo-nginx                       1.0.0                   a453eabfbdb0   27 minutes ago   52.8MB
 todo-frontend                    1.0.0                   9ff060e46ad2   27 minutes ago   52.8MB
@@ -54,7 +54,7 @@ swarm/stack-deploy.yml
 swarm/stack-simple.yml
 105 swarm/stack-simple.yml
 
-☸️  ARCHIVOS KUBERNETES
+ ARCHIVOS KUBERNETES
 ==============================================
 -rw-rw-r-- 1 dev dev  111 Oct 23 07:27 kubernetes/00-namespace.yaml
 -rw-rw-r-- 1 dev dev  728 Oct 23 07:27 kubernetes/01-secrets-configmap.yaml
@@ -111,7 +111,7 @@ kubernetes/09-version-2-deployments.yaml
 README.md
 RESUMEN-PROYECTO.md
 
-📊 RESUMEN DE ARCHIVOS
+RESUMEN DE ARCHIVOS
 ==============================================
 Archivos Dockerfile: 4
 Archivos .dockerignore: 3

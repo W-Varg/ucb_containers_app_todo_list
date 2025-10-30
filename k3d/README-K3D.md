@@ -476,10 +476,10 @@ K3D proporciona un entorno Kubernetes completo y ligero ideal para:
 **Ventajas de esta configuración:**
 - 🚀 Despliegue rápido (< 5 minutos)
 - 📦 Registry local incluido
-- 🔄 Multi-nodo para simular producción
+- Multi-nodo para simular producción
 - 💾 Persistencia de datos
 - 🔍 Health checks y auto-healing
-- 📊 Monitoreo con kubectl
+- Monitoreo con kubectl
 
 ---
 

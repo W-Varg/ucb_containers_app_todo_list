@@ -39,7 +39,7 @@ echo "-----------------------------------"
 kubectl get svc -n todo-app
 echo ""
 
-echo -e "${BLUE}📊 6. Deployments:${NC}"
+echo -e "${BLUE}6. Deployments:${NC}"
 echo "-----------------------------------"
 kubectl get deployments -n todo-app
 echo ""
@@ -49,7 +49,7 @@ echo "-----------------------------------"
 kubectl get statefulsets -n todo-app
 echo ""
 
-echo -e "${BLUE}🔄 8. ReplicaSets:${NC}"
+echo -e "${BLUE}8. ReplicaSets:${NC}"
 echo "-----------------------------------"
 kubectl get replicasets -n todo-app
 echo ""
@@ -98,7 +98,7 @@ echo "  - Backend NodePort: http://localhost:9500"
 echo "  - Frontend NodePort: http://localhost:9300"
 echo ""
 
-echo -e "${BLUE}📊 17. Resumen de Recursos:${NC}"
+echo -e "${BLUE}17. Resumen de Recursos:${NC}"
 echo "-----------------------------------"
 echo "Pods:"
 kubectl get pods -n todo-app | grep -c "Running" | xargs echo "  Running:"

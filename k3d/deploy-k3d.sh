@@ -166,7 +166,7 @@ kubectl wait --for=condition=ready pod --all -n $NAMESPACE --timeout=300s || tru
 # Paso 8: Mostrar estado del despliegue
 echo ""
 echo "=========================================="
-echo "  📊 ESTADO DEL DESPLIEGUE"
+echo "  ESTADO DEL DESPLIEGUE"
 echo "=========================================="
 echo ""
 

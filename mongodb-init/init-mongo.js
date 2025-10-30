@@ -62,6 +62,6 @@ print('Índices creados exitosamente');
 
 // Mostrar estadísticas
 const count = db.tasks.countDocuments();
-print('📊 Total de tareas en la base de datos: ' + count);
+print('Total de tareas en la base de datos: ' + count);
 
 print('Inicialización de MongoDB completada exitosamente!');

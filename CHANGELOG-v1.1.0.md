@@ -34,7 +34,7 @@
 - ✅ `swarm/stack-deploy.yml`: Imagen actualizada a `kryshor/todo-backend:1.1.0`
 - ✅ `swarm/stack-simple.yml`: Imagen actualizada a `kryshor/todo-backend:1.1.0`
 
-## 🐳 Imágenes Docker Disponibles
+##  Imágenes Docker Disponibles
 
 ### Docker Hub (kryshor)
 ```bash
@@ -103,7 +103,7 @@ kubectl logs -f deployment/backend-deployment-v1 -n todoapp
 kubectl logs -f deployment/backend -n todo-app
 ```
 
-## 📊 Estado de las Imágenes
+## Estado de las Imágenes
 
 ```
 REPOSITORY               TAG      IMAGE ID       CREATED         SIZE

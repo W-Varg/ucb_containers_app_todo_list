@@ -2,7 +2,7 @@
   PRUEBAS DEL PROYECTO TODO APP - UCB
 =========================================
 
-📊 1. Estado de los contenedores:
+1. Estado de los contenedores:
 -----------------------------------
 time="2025-10-23T07:26:59-04:00" level=warning msg="/home/dev/Documents/developer_folder/ucb/final/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
 NAME            IMAGE                 COMMAND                  SERVICE    CREATED         STATUS                     PORTS
@@ -13,7 +13,7 @@ todo-nginx      todo-nginx:1.0.0      "/docker-entrypoint.…"   nginx      4 mi
 todo-redis      redis:7-alpine        "docker-entrypoint.s…"   redis      4 minutes ago   Up 4 minutes (healthy)     0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp
 todo-worker     todo-worker:1.0.0     "docker-entrypoint.s…"   worker     4 minutes ago   Up 4 minutes (healthy)     
 
-🐳 2. Imágenes Docker creadas:
+ 2. Imágenes Docker creadas:
 -----------------------------------
 todo-nginx                       1.0.0                   a453eabfbdb0   11 minutes ago   52.8MB
 todo-frontend                    1.0.0                   9ff060e46ad2   11 minutes ago   52.8MB
@@ -101,7 +101,7 @@ local     final_redis-data
     "completionRate": "0.00"
 }
 
-🔄 8. Health Check a través de Nginx:
+8. Health Check a través de Nginx:
 -----------------------------------
 {
     "status": "OK",
@@ -133,7 +133,7 @@ local     final_redis-data
     "__v": 0
 }
 
-📊 11. Estadísticas actualizadas:
+11. Estadísticas actualizadas:
 -----------------------------------
 {
     "total": 6,
@@ -148,7 +148,7 @@ time="2025-10-23T07:26:59-04:00" level=warning msg="/home/dev/Documents/develope
 todo-backend  | (Use `node --trace-warnings ...` to show where the warning was created)
 todo-backend  | (node:1) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
 todo-backend  | 🚀 Servidor backend ejecutándose en puerto 5000
-todo-backend  | 📊 Environment: production
+todo-backend  | Environment: production
 todo-backend  | Redis conectado exitosamente
 todo-backend  | MongoDB conectado exitosamente
 todo-backend  | 💾 Tareas guardadas en cache Redis
@@ -159,16 +159,16 @@ todo-backend  | Nueva tarea creada: new ObjectId('68fa1103a0274ce26e3fe8dd')
 🔍 13. Logs recientes del Worker:
 -----------------------------------
 time="2025-10-23T07:26:59-04:00" level=warning msg="/home/dev/Documents/developer_folder/ucb/final/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
-todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 4, Completadas: 0, Pendientes: 4
+todo-worker  | Worker: Estadísticas actualizadas - Total: 4, Completadas: 0, Pendientes: 4
 todo-worker  | 💓 Worker Health: MongoDB | Redis ✅
-todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 4, Completadas: 0, Pendientes: 4
-todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 4, Completadas: 0, Pendientes: 4
+todo-worker  | Worker: Estadísticas actualizadas - Total: 4, Completadas: 0, Pendientes: 4
+todo-worker  | Worker: Estadísticas actualizadas - Total: 4, Completadas: 0, Pendientes: 4
 todo-worker  | 💓 Worker Health: MongoDB | Redis ✅
-todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 4, Completadas: 0, Pendientes: 4
-todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 4, Completadas: 0, Pendientes: 4
+todo-worker  | Worker: Estadísticas actualizadas - Total: 4, Completadas: 0, Pendientes: 4
+todo-worker  | Worker: Estadísticas actualizadas - Total: 4, Completadas: 0, Pendientes: 4
 todo-worker  | 💓 Worker Health: MongoDB | Redis ✅
-todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 5, Completadas: 0, Pendientes: 5
-todo-worker  | 📊 Worker: Estadísticas actualizadas - Total: 5, Completadas: 0, Pendientes: 5
+todo-worker  | Worker: Estadísticas actualizadas - Total: 5, Completadas: 0, Pendientes: 5
+todo-worker  | Worker: Estadísticas actualizadas - Total: 5, Completadas: 0, Pendientes: 5
 
 =========================================
   PRUEBAS COMPLETADAS EXITOSAMENTE

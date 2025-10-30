@@ -23,7 +23,7 @@
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-☸️  COMANDOS PARA ACTUALIZAR EN KUBERNETES
+ COMANDOS PARA ACTUALIZAR EN KUBERNETES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 # Actualizar a versión 1.0.1

@@ -136,7 +136,7 @@ function App() {
         </div>
 
         <footer className="app-footer">
-          <p>🐳 Dockerizado | 🔄 Orquestado | ☸️ Kubernetes Ready</p>
+          <p> Dockerizado | Orquestado | Kubernetes Ready</p>
         </footer>
       </main>
     </div>

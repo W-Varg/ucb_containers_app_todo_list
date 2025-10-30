@@ -8,7 +8,7 @@ Docker Swarm configurado
 10 Manifiestos Kubernetes
 Documentación completa (README + RESUMEN)
 
-📊 Calificación: 99/100
+Calificación: 99/100
 
 🔗 Estructura:
    - frontend/ (React + Nginx)
