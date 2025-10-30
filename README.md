@@ -5,15 +5,13 @@
 
 
 
-## 📋 Tabla de Contenidos---
-
+## 📋 Tabla de Contenidos
 
 
 1. [Descripción del Proyecto](#descripción-del-proyecto)## Descripción
 
-2. [Arquitectura](#arquitectura)
 
-3. [Prerequisitos](#prerequisitos)Sistema de gestión de tareas (ToDo List) completamente containerizado con **6 servicios**, desplegable en **Docker Compose**, **Docker Swarm** y **Kubernetes (K3D)**.
+3. [Prerequisitos](#prerequisitos) Sistema de gestión de tareas (ToDo List) completamente containerizado con **6 servicios**, desplegable en **Docker Compose**, **Docker Swarm** y **Kubernetes (K3D)**.
 
 4. [Instalación Paso a Paso](#instalación-paso-a-paso)
 
@@ -25,13 +23,12 @@
 
 8. [Comandos Útiles](#comandos-útiles)
 
-9. [Troubleshooting](#troubleshooting)---
+9. [Troubleshooting](#troubleshooting)
 
 10. [Limpieza](#limpieza)
 
 ### Características Principales
 
----
 
 - Aplicación web multi-servicio completamente funcional
 
@@ -57,101 +54,7 @@ Sistema de gestión de tareas (ToDo App) completamente containerizado y orquesta
 
 - 💾 Persistencia de datos con MongoDBSistema de gestión de tareas (ToDo List) completamente containerizado con 6 servicios, desplegable en Docker Compose, Docker Swarm y Kubernetes (K3D).
 
-### 🎯 Objetivos del Proyecto- 🐳 Containerización completa con Docker
 
-
-
-- ✅ Containerizar aplicación multi-servicio- ⚡ Cache con Redis
-
-- ✅ Implementar orquestación con Kubernetes (K3D)
-
-- ✅ Configurar alta disponibilidad con múltiples réplicas- 🔧 Procesamiento en background con Worker
-
-- ✅ Implementar persistencia de datos
-
-- ✅ Configurar load balancing- 📈 Escalabilidad horizontal
-
-- ✅ Implementar health checks y auto-healing
-
-- 🔒 Buenas prácticas de seguridad**Proyecto 100% funcional y documentado**
-
----
-
-
-
-## 🏗️ Arquitectura
-
-### Opción 1: Script Automático (⭐ RECOMENDADO)- ⚡ Cache con Redis
-
-```
-
-┌─────────────────────────────────────────────────────────────────┐
-
-│                     K3D CLUSTER (Kubernetes)                     │
-
-├─────────────────────────────────────────────────────────────────┤```bash## 🚀 INICIO RÁPIDO- 🔧 Procesamiento en background con Worker
-
-│                                                                  │
-
-│  ┌──────────────┐     ┌──────────────────────────────────┐     │# 1. Clonar el proyecto
-
-│  │  Control     │────▶│    Worker Nodes (3)              │     │
-
-│  │  Plane (1)   │     │                                  │     │git clone https://github.com/W-Varg/ucb_containers_app_todo_list.git
-
-│  └──────────────┘     └──────────────────────────────────┘     │
-
-│                                                                  │cd ucb_containers_app_todo_list
-
-│  ┌──────────────────────────────────────────────────────┐      │
-
-│  │              Nginx LoadBalancer (2 réplicas)         │      │# Opción 1: Script Automático (RECOMENDADO)
-
-│  │                  Port 9080 → 80                      │      │
-
-│  └────────────────────┬──────────────┬───────────────────┘      │# 2. Ejecutar script interactivo
-
-│                       │              │                          │
-
-│           ┌───────────▼────┐    ┌───▼──────────┐              │chmod +x INICIO-RAPIDO.sh
-
-│           │  Frontend (2)  │    │  Backend (3) │              │
-
-│           │  Port 3000     │    │  Port 5000   │              │./INICIO-RAPIDO.sh
-
-│           └────────────────┘    └───┬──────┬───┘              │
-
-│                                     │      │                   │```bash
-
-│                    ┌────────────────┘      └─────────┐         │
-
-│                    │                                 │         │El script ofrece 3 opciones:# Clonar el proyecto
-
-│             ┌──────▼────────┐              ┌────────▼──────┐  │
-
-│             │  MongoDB (1)  │              │  Redis (1)    │  │1. **Despliegue con Docker Compose** (5 minutos)
-
-│             │  Port 27017   │              │  Port 6379    │  │
-
-│             │  + PVC (5Gi)  │              │  + PVC (1Gi)  │  │2. **Despliegue con K3D/Kubernetes** (15 minutos)git clone https://github.com/W-Varg/ucb_containers_app_todo_list.git## 🏗️ Arquitectura del Sistema
-
-│             └───────────────┘              └───────────────┘  │
-
-│                                                                │3. **Ver documentación completa**
-
-│             ┌────────────────────────────┐                    │
-
-│             │  Worker (2 réplicas)       │                    │cd ucb_containers_app_todo_list
-
-│             │  Background Processing     │                    │
-
-│             └────────────────────────────┘                    │### Opción 2: Docker Compose Manual (5 minutos)
-
-│                                                                │
-
-└─────────────────────────────────────────────────────────────────┘
-
-``````bash
 
 
 

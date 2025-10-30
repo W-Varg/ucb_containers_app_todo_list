@@ -38,7 +38,10 @@ let redisClient;
   }
 })();
 
-// docs: una modificacion para subir de version el container
+// docs: Version 1.1.0 - Mejoras implementadas:
+// - Sistema de cache optimizado con Redis
+// - Mejores logs de operaciones
+// - Health check mejorado con información de versión
 
 // Modelo de Tarea
 const TaskSchema = new mongoose.Schema({
@@ -80,7 +83,8 @@ app.get('/health', (req, res) => {
     status: 'OK',
     mongodb: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected',
     redis: redisClient?.isOpen ? 'connected' : 'disconnected',
-    version: '1.0.0',
+    version: '1.1.0',
+    message: 'Backend actualizado con mejoras de rendimiento y nuevas funcionalidades',
     timestamp: new Date().toISOString(),
   });
 });

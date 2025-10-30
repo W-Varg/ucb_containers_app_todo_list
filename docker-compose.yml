@@ -79,7 +79,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    image: todo-backend:1.0.0
+    image: kryshor/todo-backend:1.1.0
     container_name: todo-backend
     restart: unless-stopped
     environment:

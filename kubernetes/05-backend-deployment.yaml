@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: todo-backend:1.0.0
+        image: kryshor/todo-backend:1.1.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000

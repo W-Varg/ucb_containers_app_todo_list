@@ -43,7 +43,7 @@ services:
 
   # Backend API con múltiples réplicas
   backend:
-    image: todo-backend:1.0.0
+    image: kryshor/todo-backend:1.1.0
     networks:
       - app-network
     environment:

@@ -98,7 +98,7 @@ services:
 
   # Backend API con múltiples réplicas y versionamiento
   backend:
-    image: todo-backend:1.0.0
+    image: kryshor/todo-backend:1.1.0
     networks:
       - backend-network
       - frontend-network
