@@ -83,8 +83,8 @@ app.get('/health', (req, res) => {
     status: 'OK',
     mongodb: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected',
     redis: redisClient?.isOpen ? 'connected' : 'disconnected',
-    version: '1.1.0',
-    message: 'Backend actualizado con mejoras de rendimiento y nuevas funcionalidades',
+    version: '1.2.0',
+    message: 'Backend v1.2.0 - Optimizaciones y mejoras de estabilidad',
     timestamp: new Date().toISOString(),
   });
 });

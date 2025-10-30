@@ -27,13 +27,13 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 # Actualizar a versión 1.0.1
-kubectl set image deployment/backend backend=wvarg/todo-backend:1.0.1 -n todo-app
+kubectl set image deployment/backend backend=kryshor/todo-backend:1.0.1 -n todo-app
 
 # Actualizar a versión 1.0.2
-kubectl set image deployment/backend backend=wvarg/todo-backend:1.0.2 -n todo-app
+kubectl set image deployment/backend backend=kryshor/todo-backend:1.0.2 -n todo-app
 
 # Actualizar a versión 1.0.3
-kubectl set image deployment/backend backend=wvarg/todo-backend:1.0.3 -n todo-app
+kubectl set image deployment/backend backend=kryshor/todo-backend:1.0.3 -n todo-app
 
 # Ver estado del rollout
 kubectl rollout status deployment backend -n todo-app
@@ -50,10 +50,10 @@ kubectl rollout undo deployment backend -n todo-app
 kubectl rollout undo deployment backend -n todo-app --to-revision=2
 
 # Volver a versión 1.0.1 (específica)
-kubectl set image deployment/backend backend=wvarg/todo-backend:1.0.1 -n todo-app
+kubectl set image deployment/backend backend=kryshor/todo-backend:1.0.1 -n todo-app
 
 # Volver a versión 1.0.2 (específica)
-kubectl set image deployment/backend backend=wvarg/todo-backend:1.0.2 -n todo-app
+kubectl set image deployment/backend backend=kryshor/todo-backend:1.0.2 -n todo-app
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -61,7 +61,7 @@ kubectl set image deployment/backend backend=wvarg/todo-backend:1.0.2 -n todo-ap
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 # Ver imágenes locales
-docker images wvarg/todo-backend
+docker images kryshor/todo-backend
 
 # Ver pods en Kubernetes
 kubectl get pods -n todo-app -l app=backend
@@ -93,7 +93,7 @@ FLUJO COMPLETO DE TRABAJO
    ./build-and-push.sh 1.0.X
 
 3. Actualizar en Kubernetes:
-   kubectl set image deployment/backend backend=wvarg/todo-backend:1.0.X -n todo-app
+   kubectl set image deployment/backend backend=kryshor/todo-backend:1.0.X -n todo-app
 
 4. Verificar:
    kubectl rollout status deployment backend -n todo-app
@@ -109,9 +109,9 @@ FLUJO COMPLETO DE TRABAJO
 
 Para cada versión (ejemplo 1.0.1) se crean 3 tags:
 
-  • wvarg/todo-backend:1.0.1  (versión específica)
-  • wvarg/todo-backend:1.0    (versión minor)
-  • wvarg/todo-backend:latest (última estable)
+  • kryshor/todo-backend:1.0.1  (versión específica)
+  • kryshor/todo-backend:1.0    (versión minor)
+  • kryshor/todo-backend:latest (última estable)
 
 Todos se suben automáticamente a Docker Hub.
 
@@ -120,7 +120,7 @@ Todos se suben automáticamente a Docker Hub.
 🔗 ENLACES ÚTILES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Docker Hub: https://hub.docker.com/r/wvarg/todo-backend/tags
+Docker Hub: https://hub.docker.com/r/kryshor/todo-backend/tags
 
 Documentación:
   • GUIA-VERSIONAMIENTO.md - Guía completa
